@@ -2209,7 +2209,7 @@ class EventDetectorMLP(EventDetector, KerasMixin):
         )
 
         callbacks = [fancy_logger]
-        callback_params = self.learner_params.get_path('training,callbacks', [])
+        callback_params = self.learner_params.get_path('training.callbacks', [])
         if callback_params:
             for cp in callback_params:
                 if cp['type'] == 'ModelCheckpoint' and not cp['parameters'].get('filepath'):
